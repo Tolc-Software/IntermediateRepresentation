@@ -7,9 +7,12 @@
 
 # Except these
 # Files
+!.clang-format
 !.gitignore
 !CMakeLists.txt
 !conanfile.txt
 
 # Directories
 !cmake
+!include
+!src

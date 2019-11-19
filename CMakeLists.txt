@@ -48,16 +48,27 @@ include(${CMAKE_BINARY_DIR}/conan_paths.cmake)
 
 include(TargetHelpers)
 
+# The IR specification
 create_target(TARGET
               IR
-              IS_LIBRARY
-              SOURCES
-              include/IR.cpp
-              INCLUDE
+              IS_INTERFACE
+              PUBLIC_INCLUDE
               include
               LINK_LIBRARIES
               project_warnings
               project_options)
+
+# Common helpers
+create_target(TARGET
+              IRHelpers
+              IS_LIBRARY
+              SOURCES
+              src/helpers.cpp
+              LINK_LIBRARIES
+              IR
+              project_warnings
+              project_options)
+
 
 # Only build tests and benchmarks if building this project directly
 if(PROJECT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
