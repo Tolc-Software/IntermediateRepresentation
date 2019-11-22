@@ -1,9 +1,0 @@
-[requires]
-Catch2/2.9.1@catchorg/stable
-google-benchmark/1.4.1@mpusz/stable
-fmt/5.2.0@bincrafters/stable
-
-[generators]
-cmake
-cmake_find_package
-cmake_paths
