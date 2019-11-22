@@ -29,17 +29,3 @@ create_target(
   project_options)
 
 add_library(IR::IR ALIAS IR)
-# Only build tests and benchmarks if building this project directly
-if(PROJECT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
-  option(ENABLE_TESTING "Build the testing tree" OFF)
-  if(ENABLE_TESTING)
-    # enable_testing()
-    # add_subdirectory(tests)
-    # TODO: Add benchmarks
-  endif()
-
-  option(ENABLE_BENCHMARKS "Build the benchmarks" OFF)
-  if(ENABLE_BENCHMARKS)
-    # TODO: Add benchmarks
-  endif()
-endif()
