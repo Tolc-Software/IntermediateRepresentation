@@ -2,18 +2,29 @@
 #include <vector>
 
 namespace IR {
+
+// The supported types that can be converted
+enum class Type {
+	ir_char,
+	ir_double,
+	ir_float,
+	ir_int,
+	ir_long,
+	ir_std_string,
+};
+
 struct Variable {
 	// Name that should be used to access the variable
 	std::string m_name;
 	// Type of the variable, int, double, ...
-	std::string m_type;
+	Type m_type;
 };
 
 struct Function {
 	// Name that should be used to access the function
 	std::string m_name;
 	// Return type of the function, int, double, ...
-	std::string m_returnType;
+	Type m_returnType;
 
 	std::vector<Variable> m_arguments;
 };
