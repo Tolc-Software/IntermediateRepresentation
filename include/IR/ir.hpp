@@ -18,6 +18,14 @@ struct Variable {
 	std::string m_name;
 	// Type of the variable, int, double, ...
 	Type m_type;
+
+	// The numbers of pointers on this variable.
+	// Ex:
+	//      int* a;
+	//        => m_numPointers = 1
+	//      int*** a;
+	//        => m_numPointers = 3
+	int m_numPointers;
 };
 
 struct Function {
