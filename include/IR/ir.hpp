@@ -5,12 +5,12 @@ namespace IR {
 
 // The supported types that can be converted
 enum class Type {
-	ir_char,
-	ir_double,
-	ir_float,
-	ir_int,
-	ir_long,
-	ir_std_string,
+	Char,
+	Double,
+	Float,
+	Int,
+	Long,
+	String,
 };
 
 struct Variable {
