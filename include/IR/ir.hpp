@@ -13,11 +13,18 @@ enum class Type {
 	String,
 };
 
+enum class Qualifier {
+	Const,
+};
+
 struct Variable {
 	// Name that should be used to access the variable
 	std::string m_name;
 	// Type of the variable, int, double, ...
 	Type m_type;
+
+	// Could be const, ...
+	std::vector<Qualifier> m_qualifiers;
 
 	// The numbers of pointers on this variable.
 	// Ex:
