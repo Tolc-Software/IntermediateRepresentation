@@ -58,7 +58,7 @@ struct Struct {
 struct Namespace {
 	// NOTE: The name might be "" if it is the global namespace
 	std::string m_name;
-	Namespace const* parent = nullptr;
+	Namespace const* m_parent = nullptr;
 
 	std::vector<Struct> m_structs;
 	std::vector<Function> m_functions;
