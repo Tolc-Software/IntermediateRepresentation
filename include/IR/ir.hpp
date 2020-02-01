@@ -53,6 +53,7 @@ struct Struct {
 	// NOTE: Might need to add public/protected/private
 	std::vector<Function> m_functions;
 	std::vector<Variable> m_memberVariables;
+	std::vector<Struct> m_structs;
 };
 
 struct Namespace {
