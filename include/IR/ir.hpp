@@ -13,6 +13,7 @@ enum class Type {
 	Int,
 	Long,
 	String,
+	Void,
 };
 
 enum class Qualifier {
