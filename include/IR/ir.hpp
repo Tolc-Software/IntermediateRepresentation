@@ -1,12 +1,13 @@
 #pragma once
 
+#include <optional>
 #include <string>
+#include <variant>
 #include <vector>
 
 namespace IR {
 
-// The supported types that can be converted
-enum class Type {
+enum class BaseType {
 	Char,
 	Double,
 	Float,
@@ -16,15 +17,33 @@ enum class Type {
 	Void,
 };
 
+enum class ContainerType {
+	Array,
+	Map,
+	Set,
+	Unordered_map,
+	Unordered_set,
+	Vector,
+};
+
 enum class Qualifier {
 	Const,
 };
 
-struct Variable {
-	// Name that should be used to access the variable
-	std::string m_name;
-	// Type of the variable, int, double, ...
-	Type m_type;
+struct Type {
+	struct Container {
+		ContainerType m_containerType;
+		Type* m_containedType = nullptr;
+	};
+
+	struct Value {
+		BaseType m_valueType;
+		// Some containers have keys
+		std::optional<BaseType> m_keyType;
+	};
+	// Either it is a value with some type,
+	// or it is a container ultimately containing a value type
+	std::variant<Value, Container> m_type;
 
 	// Could be const, ...
 	std::vector<Qualifier> m_qualifiers;
@@ -35,7 +54,14 @@ struct Variable {
 	//        => m_numPointers = 1
 	//      int*** a;
 	//        => m_numPointers = 3
-	int m_numPointers;
+	int m_numPointers = 0;
+};
+
+struct Variable {
+	// Name that should be used to access the variable
+	std::string m_name;
+	// Type of the variable, int, double, ...
+	Type m_type;
 };
 
 struct Function {
