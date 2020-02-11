@@ -30,6 +30,12 @@ enum class Qualifier {
 	Const,
 };
 
+enum class AccessModifier {
+	Public,
+	Private,
+	Protected,
+};
+
 struct Type {
 	struct Container {
 		ContainerType m_containerType;
@@ -60,14 +66,14 @@ struct Type {
 struct Variable {
 	// Name that should be used to access the variable
 	std::string m_name;
-	// Type of the variable, int, double, ...
+
 	Type m_type;
 };
 
 struct Function {
 	// Name that should be used to access the function
 	std::string m_name;
-	// Return type of the function, int, double, ...
+
 	Type m_returnType;
 
 	std::vector<Variable> m_arguments;
@@ -78,7 +84,7 @@ struct Struct {
 	std::string m_name;
 
 	// NOTE: Might need to add public/protected/private
-	std::vector<Function> m_functions;
+	std::vector<std::pair<AccessModifier, Function>> m_functions;
 	std::vector<Variable> m_memberVariables;
 	std::vector<Struct> m_structs;
 };
@@ -86,6 +92,7 @@ struct Struct {
 struct Namespace {
 	// NOTE: The name might be "" if it is the global namespace
 	std::string m_name;
+	// NOTE: All parents of namespaces are namespaces
 	std::string m_parent;
 
 	std::vector<Namespace> m_namespaces;
