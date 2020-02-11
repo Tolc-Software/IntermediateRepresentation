@@ -88,7 +88,7 @@ struct Namespace {
 	std::string m_name;
 	std::string m_parent;
 
-	std::vector<Namespace> m_children;
+	std::vector<Namespace> m_namespaces;
 	std::vector<Struct> m_structs;
 	std::vector<Function> m_functions;
 	std::vector<Variable> m_constants;
