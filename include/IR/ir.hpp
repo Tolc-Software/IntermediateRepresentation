@@ -26,10 +26,6 @@ enum class ContainerType {
 	Vector,
 };
 
-enum class Qualifier {
-	Const,
-};
-
 enum class AccessModifier {
 	Public,
 	Private,
@@ -51,8 +47,8 @@ struct Type {
 	// or it is a container ultimately containing a value type
 	std::variant<Value, Container> m_type;
 
-	// Could be const, ...
-	std::vector<Qualifier> m_qualifiers;
+	// Qualifiers
+	bool isConst;
 
 	// The numbers of pointers on this variable.
 	// Ex:
