@@ -48,7 +48,7 @@ struct Type {
 	std::variant<Value, Container> m_type;
 
 	// Qualifiers
-	bool isConst;
+	bool m_isConst;
 
 	// The numbers of pointers on this variable.
 	// Ex:
