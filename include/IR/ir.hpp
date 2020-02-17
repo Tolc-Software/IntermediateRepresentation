@@ -79,9 +79,8 @@ struct Struct {
 	// NOTE: Structs are interpreted the same as classes
 	std::string m_name;
 
-	// NOTE: Might need to add public/protected/private
 	std::vector<std::pair<AccessModifier, Function>> m_functions;
-	std::vector<Variable> m_memberVariables;
+	std::vector<std::pair<AccessModifier, Variable>> m_memberVariables;
 	std::vector<Struct> m_structs;
 };
 
