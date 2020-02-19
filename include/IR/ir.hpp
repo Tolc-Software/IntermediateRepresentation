@@ -93,6 +93,5 @@ struct Namespace {
 	std::vector<Namespace> m_namespaces;
 	std::vector<Struct> m_structs;
 	std::vector<Function> m_functions;
-	std::vector<Variable> m_constants;
 };
 }
