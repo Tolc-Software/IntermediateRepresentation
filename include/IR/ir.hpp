@@ -7,6 +7,8 @@
 
 namespace IR {
 
+struct Struct;
+
 enum class BaseType {
 	Char,
 	Double,
@@ -43,9 +45,15 @@ struct Type {
 		// Some containers have keys
 		std::optional<BaseType> m_keyType;
 	};
+
+	// A user defined class/struct.
+	struct UserDefined {
+		Struct const* m_struct;
+	};
+
 	// Either it is a value with some type,
 	// or it is a container ultimately containing a value type
-	std::variant<Value, Container> m_type;
+	std::variant<Value, Container, UserDefined> m_type;
 
 	// Qualifiers
 	bool m_isConst;
@@ -73,15 +81,6 @@ struct Function {
 	Type m_returnType;
 
 	std::vector<Variable> m_arguments;
-};
-
-struct Struct {
-	// NOTE: Structs are interpreted the same as classes
-	std::string m_name;
-
-	std::vector<std::pair<AccessModifier, Function>> m_functions;
-	std::vector<std::pair<AccessModifier, Variable>> m_memberVariables;
-	std::vector<Struct> m_structs;
 };
 
 struct Namespace {

@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.15...3.16)
 
 project(
   IR
-  VERSION 0.7
+  VERSION 0.8
   LANGUAGES CXX)
 
 # The IR specification
