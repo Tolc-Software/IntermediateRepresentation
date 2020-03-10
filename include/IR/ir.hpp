@@ -7,8 +7,6 @@
 
 namespace IR {
 
-struct Struct;
-
 enum class BaseType {
 	Char,
 	Double,
@@ -48,7 +46,7 @@ struct Type {
 
 	// A user defined class/struct.
 	struct UserDefined {
-		Struct const* m_struct;
+		std::string m_struct;
 	};
 
 	// Either it is a value with some type,
