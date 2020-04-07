@@ -54,6 +54,9 @@ struct Type {
 	// or it is a container ultimately containing a value type
 	std::variant<Value, Container, UserDefined> m_type;
 
+	// This is what the user wrote
+	std::string m_representaion;
+
 	// Qualifiers
 	bool m_isConst;
 
@@ -77,6 +80,10 @@ struct Function {
 	// Name that should be used to access the function
 	std::string m_name;
 
+	// This is the full name of the function
+	// E.g. MyNamespace::myFunction
+	std::string m_representaion;
+
 	Type m_returnType;
 
 	std::vector<Variable> m_arguments;
@@ -85,6 +92,10 @@ struct Function {
 struct Struct {
 	// NOTE: Structs are interpreted the same as classes
 	std::string m_name;
+
+	// This is the full name of the struct/class
+	// E.g. MyNamespace::MyClass
+	std::string m_representaion;
 
 	std::vector<std::pair<AccessModifier, Function>> m_functions;
 	std::vector<std::pair<AccessModifier, Variable>> m_memberVariables;
@@ -96,6 +107,10 @@ struct Namespace {
 	std::string m_name;
 	// NOTE: All parents of namespaces are namespaces
 	std::string m_parent;
+
+	// This is the full name of the namespace
+	// E.g. SomeNamespace::OtherNamespace::ThisNamespace
+	std::string m_representaion;
 
 	std::vector<Namespace> m_namespaces;
 	std::vector<Struct> m_structs;
