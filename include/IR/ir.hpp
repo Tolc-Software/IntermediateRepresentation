@@ -54,7 +54,7 @@ struct Type {
 	// or it is a container ultimately containing a value type
 	std::variant<Value, Container, UserDefined> m_type;
 
-	// This is what the user wrote
+	// This is what the user wrote, removing any using's
 	std::string m_representaion;
 
 	// Qualifiers
@@ -67,6 +67,10 @@ struct Type {
 	//      int*** a;
 	//        => m_numPointers = 3
 	int m_numPointers = 0;
+
+	// Ex true for:
+	//     std::string& someoneElsesString;
+	bool m_isReference;
 };
 
 struct Variable {
