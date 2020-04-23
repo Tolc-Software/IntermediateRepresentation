@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.15...3.16)
 
-project(IR VERSION 0.9 LANGUAGES CXX)
+project(IR VERSION 0.10 LANGUAGES CXX)
 
 # The IR specification
 add_library(IR INTERFACE)

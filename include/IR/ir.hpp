@@ -109,8 +109,6 @@ struct Struct {
 struct Namespace {
 	// NOTE: The name might be "" if it is the global namespace
 	std::string m_name;
-	// NOTE: All parents of namespaces are namespaces
-	std::string m_parent;
 
 	// This is the full name of the namespace
 	// E.g. SomeNamespace::OtherNamespace::ThisNamespace
