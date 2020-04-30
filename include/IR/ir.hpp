@@ -47,7 +47,8 @@ struct Type {
 	};
 
 	struct UserDefined {
-		Struct const* m_struct;
+		// Fully qualified name of the struct
+		std::string m_representation;
 	};
 
 	// Either it is a value with some type,
