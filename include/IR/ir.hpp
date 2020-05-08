@@ -37,7 +37,7 @@ enum class AccessModifier {
 struct Type {
 	struct Container {
 		ContainerType m_containerType;
-		Type* m_containedType = nullptr;
+		std::vector<Type> m_containedTypes;
 	};
 
 	struct Value {
