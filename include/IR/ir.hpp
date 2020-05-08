@@ -36,14 +36,12 @@ enum class AccessModifier {
 
 struct Type {
 	struct Container {
-		ContainerType m_containerType;
+		ContainerType m_container;
 		std::vector<Type> m_containedTypes;
 	};
 
 	struct Value {
-		BaseType m_valueType;
-		// Some containers have keys
-		std::optional<BaseType> m_keyType;
+		BaseType m_base;
 	};
 
 	struct UserDefined {
