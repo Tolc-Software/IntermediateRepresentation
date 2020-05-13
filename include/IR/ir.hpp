@@ -21,6 +21,7 @@ enum class BaseType {
 
 enum class ContainerType {
 	Array,
+	Allocator,
 	Map,
 	Set,
 	Unordered_map,
