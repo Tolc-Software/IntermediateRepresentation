@@ -20,8 +20,10 @@ enum class BaseType {
 };
 
 enum class ContainerType {
-	Array,
 	Allocator,
+	Array,
+	Greater,
+	Less,
 	Map,
 	Set,
 	Unordered_map,
