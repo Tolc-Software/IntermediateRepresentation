@@ -22,7 +22,9 @@ enum class BaseType {
 enum class ContainerType {
 	Allocator,
 	Array,
+	Equal_to,
 	Greater,
+	Hash,
 	Less,
 	Map,
 	Pair,
