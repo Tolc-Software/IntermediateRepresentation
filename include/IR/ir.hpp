@@ -110,6 +110,8 @@ struct Struct {
 	std::vector<std::pair<AccessModifier, Function>> m_functions;
 	std::vector<std::pair<AccessModifier, Variable>> m_memberVariables;
 	std::vector<Struct> m_structs;
+
+	bool m_isTriviallyConstructible;
 };
 
 struct Namespace {
