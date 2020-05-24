@@ -41,6 +41,16 @@ enum class AccessModifier {
 	Protected,
 };
 
+struct Enum {
+	std::string m_name;
+	// Fully qualified name
+	std::string m_representation;
+	// Unscoped values
+	std::vector<std::string> m_values;
+	// True if it was declared as 'enum class'
+	bool m_isScoped;
+};
+
 struct Type {
 	struct Container {
 		ContainerType m_container;
