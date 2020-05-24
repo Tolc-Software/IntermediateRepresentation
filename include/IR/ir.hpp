@@ -119,8 +119,8 @@ struct Struct {
 
 	std::vector<std::pair<AccessModifier, Function>> m_functions;
 	std::vector<std::pair<AccessModifier, Variable>> m_memberVariables;
+	std::vector<std::pair<AccessModifier, Enum>> m_enums;
 	std::vector<Struct> m_structs;
-	std::vector<Enum> m_enums;
 
 	bool m_hasImplicitDefaultConstructor;
 };
