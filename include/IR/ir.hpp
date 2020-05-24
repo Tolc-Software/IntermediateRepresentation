@@ -120,6 +120,7 @@ struct Struct {
 	std::vector<std::pair<AccessModifier, Function>> m_functions;
 	std::vector<std::pair<AccessModifier, Variable>> m_memberVariables;
 	std::vector<Struct> m_structs;
+	std::vector<Enum> m_enums;
 
 	bool m_hasImplicitDefaultConstructor;
 };
@@ -135,5 +136,6 @@ struct Namespace {
 	std::vector<Namespace> m_namespaces;
 	std::vector<Struct> m_structs;
 	std::vector<Function> m_functions;
+	std::vector<Enum> m_enums;
 };
 }
