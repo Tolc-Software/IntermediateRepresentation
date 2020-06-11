@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.15...3.16)
 
 project(
   IR
-  VERSION 0.10
+  VERSION 0.11
   LANGUAGES CXX)
 
 # The IR specification
@@ -10,6 +10,9 @@ add_library(IR INTERFACE)
 target_include_directories(
   IR INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/include>
                $<INSTALL_INTERFACE:include>)
+
+set_target_properties(IR PROPERTIES PUBLIC_HEADER
+                                    ${CMAKE_CURRENT_LIST_DIR}/include/IR/ir.hpp)
 
 target_compile_features(IR INTERFACE cxx_std_17)
 
