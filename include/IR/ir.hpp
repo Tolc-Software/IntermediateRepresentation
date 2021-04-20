@@ -15,7 +15,6 @@ enum class BaseType {
 	Char,
 	Char16_t,
 	Char32_t,
-	Char8_t,
 	Double,
 	Float,
 	Int,
