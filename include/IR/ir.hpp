@@ -9,15 +9,30 @@ namespace IR {
 
 struct Struct;
 
+// See https://en.cppreference.com/w/cpp/language/types for a list of builtin types
 enum class BaseType {
 	Bool,
 	Char,
+	Char16_t,
+	Char32_t,
+	Char8_t,
 	Double,
 	Float,
 	Int,
 	Long,
+	Long_double,
+	Long_int,
+	Long_long_int,
+	Short_int,
+	Signed_char,
 	String,
+	Unsigned_char,
+	Unsigned_int,
+	Unsigned_long_int,
+	Unsigned_long_long_int,
+	Unsigned_short_int,
 	Void,
+	Wchar_t,
 };
 
 enum class ContainerType {
@@ -144,4 +159,4 @@ struct Namespace {
 	std::vector<Function> m_functions;
 	std::vector<Enum> m_enums;
 };
-}
+}    // namespace IR
