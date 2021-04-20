@@ -18,7 +18,6 @@ enum class BaseType {
 	Double,
 	Float,
 	Int,
-	Long,
 	Long_double,
 	Long_int,
 	Long_long_int,
