@@ -10,6 +10,7 @@ namespace IR {
 struct Struct;
 
 enum class BaseType {
+	Bool,
 	Char,
 	Double,
 	Float,
