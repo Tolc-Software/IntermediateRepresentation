@@ -46,6 +46,7 @@ enum class ContainerType {
 	Map,
 	MultiMap,
 	MultiSet,
+	Optional,
 	Pair,
 	PriorityQueue,
 	Queue,
@@ -56,6 +57,7 @@ enum class ContainerType {
 	UnorderedMultiMap,
 	UnorderedMultiSet,
 	UnorderedSet,
+	Variant,
 	Vector,
 };
 
