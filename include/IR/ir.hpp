@@ -24,6 +24,7 @@ enum class BaseType {
 	ShortInt,
 	SignedChar,
 	String,
+	StringView,
 	UnsignedChar,
 	UnsignedInt,
 	UnsignedLongInt,
