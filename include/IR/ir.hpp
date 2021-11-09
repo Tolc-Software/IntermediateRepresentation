@@ -98,9 +98,14 @@ struct Type {
 		std::string m_representation;
 	};
 
+	struct Function {
+		// Fully qualified name of the function
+		std::string m_representation;
+	};
+
 	// Either it is a value with some type,
 	// or it is a container ultimately containing a value type
-	std::variant<Value, Container, EnumValue, UserDefined> m_type;
+	std::variant<Value, Container, EnumValue, UserDefined, Function> m_type;
 
 	// This is what the user wrote, removing any using's
 	std::string m_representation;
