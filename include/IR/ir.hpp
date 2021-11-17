@@ -144,6 +144,9 @@ struct Function {
 	Type m_returnType;
 
 	std::vector<Variable> m_arguments;
+
+	// Is empty if function is not a template
+	std::vector<Type> m_templateArguments;
 };
 
 struct Struct {
@@ -158,6 +161,9 @@ struct Struct {
 	std::vector<std::pair<AccessModifier, Variable>> m_memberVariables;
 	std::vector<std::pair<AccessModifier, Enum>> m_enums;
 	std::vector<Struct> m_structs;
+
+	// Is empty if struct is not a template
+	std::vector<Type> m_templateArguments;
 
 	bool m_hasImplicitDefaultConstructor;
 };
