@@ -16,6 +16,7 @@ enum class BaseType {
 	Char16_t,
 	Char32_t,
 	Double,
+	FilesystemPath,
 	Float,
 	Int,
 	LongDouble,
