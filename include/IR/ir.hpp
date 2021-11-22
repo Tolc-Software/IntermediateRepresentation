@@ -114,6 +114,8 @@ struct Type {
 	// Qualifiers
 	bool m_isConst;
 
+	bool m_isStatic;
+
 	// The numbers of pointers on this variable.
 	// Ex:
 	//      int* a;
@@ -167,6 +169,7 @@ struct Struct {
 	std::vector<Type> m_templateArguments;
 
 	bool m_hasImplicitDefaultConstructor;
+	bool m_isStatic;
 };
 
 struct Namespace {
