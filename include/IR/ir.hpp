@@ -185,5 +185,6 @@ struct Namespace {
 	std::vector<Struct> m_structs;
 	std::vector<Function> m_functions;
 	std::vector<Enum> m_enums;
+	std::vector<Variable> m_variables;
 };
 }    // namespace IR
