@@ -150,6 +150,8 @@ struct Function {
 
 	// Is empty if function is not a template
 	std::vector<Type> m_templateArguments;
+
+	bool m_isStatic;
 };
 
 struct Struct {
@@ -169,7 +171,6 @@ struct Struct {
 	std::vector<Type> m_templateArguments;
 
 	bool m_hasImplicitDefaultConstructor;
-	bool m_isStatic;
 };
 
 struct Namespace {
