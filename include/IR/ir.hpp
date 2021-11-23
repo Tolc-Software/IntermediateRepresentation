@@ -133,11 +133,6 @@ struct Variable {
 	// Name that should be used to access the variable
 	std::string m_name;
 
-	// Fully qualified name
-	// Same as name for function arguments
-	// Different for global variables
-	std::string m_representation;
-
 	Type m_type;
 };
 
