@@ -61,6 +61,7 @@ enum class ContainerType {
 	UnorderedMultiMap,
 	UnorderedMultiSet,
 	UnorderedSet,
+	Valarray,
 	Variant,
 	Vector,
 };
