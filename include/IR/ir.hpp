@@ -67,12 +67,6 @@ enum class ContainerType {
 	Vector,
 };
 
-enum class AccessModifier {
-	Public,
-	Private,
-	Protected,
-};
-
 struct Enum {
 	std::string m_name;
 	// Fully qualified name
@@ -158,18 +152,27 @@ struct Function {
 	bool m_isStatic;
 };
 
+struct StructData {
+	std::vector<Function> m_constructors;
+	std::vector<Function> m_destructors;
+	std::vector<Function> m_functions;
+	std::vector<Variable> m_memberVariables;
+	std::vector<Enum> m_enums;
+	std::vector<Struct> m_structs;
+};
+
 struct Struct {
 	// NOTE: Structs are interpreted the same as classes
+	// MyNamespace::MyClass -> m_name = MyClass
 	std::string m_name;
 
 	// This is the full name of the struct/class
 	// E.g. MyNamespace::MyClass
 	std::string m_representation;
 
-	std::vector<std::pair<AccessModifier, Function>> m_functions;
-	std::vector<std::pair<AccessModifier, Variable>> m_memberVariables;
-	std::vector<std::pair<AccessModifier, Enum>> m_enums;
-	std::vector<Struct> m_structs;
+	StructData m_public;
+	StructData m_private;
+	StructData m_protected;
 
 	// Is empty if struct is not a template
 	std::vector<Type> m_templateArguments;
