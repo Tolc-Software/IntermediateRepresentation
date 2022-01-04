@@ -10,8 +10,8 @@
 !.clang-format
 !.gitignore
 !CMakeLists.txt
+!LICENSE.md
 !README.md
-!conanfile.txt
 
 # Directories
 !cmake
