@@ -101,10 +101,14 @@ struct Type {
 		// Fully qualified name of the function
 		std::string m_representation;
 	};
+	
+	// Represents a type parameter that is an integral
+	// E.g. 3 in std::array<int, 3>
+	struct Integral {};
 
 	// Either it is a value with some type,
 	// or it is a container ultimately containing a value type
-	std::variant<Value, Container, EnumValue, UserDefined, Function> m_type;
+	std::variant<Value, Container, EnumValue, UserDefined, Function, Integral> m_type;
 
 	// This is what the user wrote, removing any using's
 	std::string m_representation;
