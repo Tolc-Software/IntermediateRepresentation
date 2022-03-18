@@ -10,6 +10,7 @@
 !.clang-format
 !.gitignore
 !CMakeLists.txt
+!COPYRIGHT.md
 !LICENSE.md
 !README.md
 
@@ -18,4 +19,7 @@
 !docs
 !include
 !src
-!COPYRIGHT.md
+!tools
+
+# Generated
+docs/ReleaseNotes/version
