@@ -71,6 +71,8 @@ struct Enum {
 	std::string m_name;
 	// Fully qualified name
 	std::string m_representation;
+	// Documentation string
+	std::string m_documentation;
 	// Unscoped values
 	std::vector<std::string> m_values;
 	// True if it was declared as 'enum class'
@@ -101,7 +103,7 @@ struct Type {
 		// Fully qualified name of the function
 		std::string m_representation;
 	};
-	
+
 	// Represents a type parameter that is an integral
 	// E.g. 3 in std::array<int, 3>
 	struct Integral {};
@@ -134,6 +136,8 @@ struct Type {
 struct Variable {
 	// Name that should be used to access the variable
 	std::string m_name;
+	// Documentation string
+	std::string m_documentation;
 
 	Type m_type;
 };
@@ -145,6 +149,9 @@ struct Function {
 	// This is the full name of the function
 	// E.g. MyNamespace::myFunction
 	std::string m_representation;
+
+	// Documentation string
+	std::string m_documentation;
 
 	Type m_returnType;
 
@@ -173,6 +180,9 @@ struct Struct {
 	// This is the full name of the struct/class
 	// E.g. MyNamespace::MyClass
 	std::string m_representation;
+
+	// Documentation string
+	std::string m_documentation;
 
 	StructData m_public;
 	StructData m_private;
