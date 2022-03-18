@@ -9,6 +9,7 @@
 # Files
 !.clang-format
 !.gitignore
+!.github
 !CMakeLists.txt
 !COPYRIGHT.md
 !LICENSE.md
