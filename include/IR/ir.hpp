@@ -7,8 +7,6 @@
 
 namespace IR {
 
-struct Struct;
-
 // See https://en.cppreference.com/w/cpp/language/types for a list of builtin types
 enum class BaseType {
 	Bool,
@@ -67,6 +65,38 @@ enum class ContainerType {
 	Vector,
 };
 
+// https://en.cppreference.com/w/cpp/language/operators
+enum class Operator {
+	// +
+	Addition,
+	// -
+	Subtraction,
+	// *
+	Multiplication,
+	// /
+	Division,
+	// %
+	Modulus,
+	// =
+	Assignment,
+	// ==
+	Equal,
+	// !=
+	NotEqual,
+	// >
+	GreaterThan,
+	// >=
+	GreaterThanOrEqualTo,
+	// <
+	LessThan,
+	// <=
+	LessThanOrEqualTo,
+	// []
+	Subscript,
+	// ()
+	Call
+};
+
 struct Enum {
 	std::string m_name;
 	// Fully qualified name
@@ -110,7 +140,8 @@ struct Type {
 
 	// Either it is a value with some type,
 	// or it is a container ultimately containing a value type
-	std::variant<Value, Container, EnumValue, UserDefined, Function, Integral> m_type;
+	std::variant<Value, Container, EnumValue, UserDefined, Function, Integral>
+	    m_type;
 
 	// This is what the user wrote, removing any using's
 	std::string m_representation;
@@ -163,6 +194,8 @@ struct Function {
 	bool m_isStatic;
 };
 
+struct Struct;
+
 struct StructData {
 	std::vector<Function> m_constructors;
 	std::vector<Function> m_destructors;
@@ -170,6 +203,9 @@ struct StructData {
 	std::vector<Variable> m_memberVariables;
 	std::vector<Enum> m_enums;
 	std::vector<Struct> m_structs;
+	// Fully qualified name to inherited class
+	std::vector<std::string> m_inherited;
+	std::vector<std::pair<Operator, Function>> m_operators;
 };
 
 struct Struct {
@@ -201,6 +237,9 @@ struct Namespace {
 	// This is the full name of the namespace
 	// E.g. SomeNamespace::OtherNamespace::ThisNamespace
 	std::string m_representation;
+
+	// Documentation string
+	std::string m_documentation;
 
 	std::vector<Namespace> m_namespaces;
 	std::vector<Struct> m_structs;
