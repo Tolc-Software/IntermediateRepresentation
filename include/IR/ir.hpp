@@ -79,6 +79,16 @@ enum class Operator {
 	Modulus,
 	// =
 	Assignment,
+	// +=
+	AddEqual,
+	// -=
+	SubEqual,
+	// *=
+	MulEqual,
+	// /=
+	DivEqual,
+	// %=
+	ModEqual,
 	// ==
 	Equal,
 	// !=
@@ -91,10 +101,25 @@ enum class Operator {
 	LessThan,
 	// <=
 	LessThanOrEqualTo,
+	// <<
+	LeftShift,
+	// >>
+	RightShift,
+	// ++
+	Increment,
+	// --
+	Decrement,
 	// []
 	Subscript,
 	// ()
 	Call
+};
+
+enum class Polymorphic {
+	// Not Applicable
+	NA,
+	Virtual,
+	PureVirtual,
 };
 
 struct Enum {
@@ -190,6 +215,8 @@ struct Function {
 
 	// Is empty if function is not a template
 	std::vector<Type> m_templateArguments;
+
+	Polymorphic m_polymorphic;
 
 	bool m_isStatic;
 };
