@@ -130,6 +130,8 @@ struct Enum {
 	std::string m_documentation;
 	// Unscoped values
 	std::vector<std::string> m_values;
+
+	size_t m_id;
 	// True if it was declared as 'enum class'
 	bool m_isScoped;
 };
@@ -196,6 +198,8 @@ struct Variable {
 	std::string m_documentation;
 
 	Type m_type;
+
+	size_t m_id;
 };
 
 struct Function {
@@ -210,6 +214,8 @@ struct Function {
 	std::string m_documentation;
 
 	Type m_returnType;
+
+	size_t m_id;
 
 	std::vector<Variable> m_arguments;
 
@@ -253,6 +259,8 @@ struct Struct {
 
 	// Is empty if struct is not a template
 	std::vector<Type> m_templateArguments;
+
+	size_t m_id;
 
 	bool m_hasImplicitDefaultConstructor;
 };
