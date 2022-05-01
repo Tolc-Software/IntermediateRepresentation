@@ -176,8 +176,6 @@ struct Type {
 	// Qualifiers
 	bool m_isConst;
 
-	bool m_isStatic;
-
 	// The numbers of pointers on this variable.
 	// Ex:
 	//      int* a;
@@ -208,6 +206,8 @@ struct Variable {
 	std::string m_documentation;
 
 	size_t m_id;
+
+	bool m_isStatic;
 };
 
 struct Function {
