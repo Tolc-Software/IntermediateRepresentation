@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.15...3.16)
 
 project(
   IR
-  VERSION 0.15.0
+  VERSION 0.15.1
   LANGUAGES CXX)
 
 configure_file(docs/ReleaseNotes/version.in
